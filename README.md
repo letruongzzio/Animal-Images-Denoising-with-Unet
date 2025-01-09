@@ -1,6 +1,6 @@
 # Animal Images Denoising with U-Net
 
-This project focuses on denoising animal face images using a U-Net architecture. The dataset is processed and augmented with Gaussian noise to create synthetic noisy images for training the model. The project includes functionalities for denoising, colorization, and super-resolution, along with instructions to extend the model for these tasks.
+This project focuses on denoising animal face images using a U-Net architecture. The dataset is processed and augmented with Gaussian noise to create synthetic noisy images for training the model. The project includes functionalities for denoising along with instructions to extend the model for these tasks.
 
 ---
 
