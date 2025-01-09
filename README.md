@@ -14,7 +14,7 @@ This project focuses on denoising animal face images using a U-Net architecture.
 - **`image/`**: Contains prediction results and loss plots. Example files: `test_prediction_1.png`, `val_prediction_1.png`, `loss_plot.png`
 
 - **`model/`**: Contains the core model implementation.
-  - Refer to the [README in `model/`](./README.md) for detailed usage.
+  - Refer to the [README in `model/`](./model/README.md) for detailed usage.
   - Includes saved models and loaders under `model/storage`.
 
 - **`utils/`**: Contains helper scripts for data processing and augmentation. Refer to the [README in `utils/`](./utils/README.md) for detailed explanations.
