@@ -48,7 +48,7 @@ This project focuses on denoising animal face images using a U-Net architecture.
 3. Read README files in subdirectories for detailed instructions on data processing, model implementation, and utility scripts.
 
 ### Preparation
-1. Download the dataset from [this link](https://drive.google.com/file/d/1G9y3pjZQrWBkFjc8oxpeD1wRborH2D7X/view?usp=drive_link) and extract `afhq.zip`, or you can implement as [Installation](#installation) step 3.
+1. Download the dataset from [this link](https://drive.google.com/file/d/1-cvQh3WWM3_lrYm3tLfpHyuexFYTnCBM/view?usp=drive_link) and extract `afhq.zip`, or you can implement as [Installation](#installation) step 3.
 2. Place the extracted images into the following directory:
    ```
    ~/animal-images-denoising-with-unet/data/
