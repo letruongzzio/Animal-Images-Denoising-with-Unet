@@ -14,14 +14,14 @@ IMAGE_SIZE = 224
 
 
 def get_dataloaders(
-        train_images_dir=TRAIN_IMAGES_DIRNAME,
-        train_labels_dir=TRAIN_LABELS_DIRNAME,
-        val_images_dir=VAL_IMAGES_DIRNAME,
-        val_labels_dir=VAL_LABELS_DIRNAME,
-        test_image_dir=TEST_IMAGES_DIRNAME,
-        test_labels_dir=TEST_LABELS_DIRNAME,
-        batch_size=None,
-        image_size=IMAGE_SIZE):
+        train_images_dir: str = TRAIN_IMAGES_DIRNAME,
+        train_labels_dir: str = TRAIN_LABELS_DIRNAME,
+        val_images_dir: str = VAL_IMAGES_DIRNAME,
+        val_labels_dir: str = VAL_LABELS_DIRNAME,
+        test_image_dir: str = TEST_IMAGES_DIRNAME,
+        test_labels_dir: str = TEST_LABELS_DIRNAME,
+        batch_size: list = None,
+        image_size: int = IMAGE_SIZE) -> None:
     """
     Creates and returns DataLoaders for train, validation, and test datasets.
 
@@ -31,6 +31,7 @@ def get_dataloaders(
         val_images_dir (str): Path to the directory containing validation images.
         val_labels_dir (str): Path to the directory containing validation labels.
         test_image_dir (str): Path to the directory containing test images.
+        test_labels_dir (str): Path to the directory containing test labels.
         batch_size (list): List containing batch sizes for train, val, and test DataLoaders.
         image_size (int): Size of the images (assumed to be square
 

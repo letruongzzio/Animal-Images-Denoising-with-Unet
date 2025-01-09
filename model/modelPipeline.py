@@ -13,7 +13,14 @@ sys.path.append(PROJECT_ROOT)
 from constants import MODEL_DIRNAME, IMAGE_DIRNAME
 
 
-def evaluate(model, loader, criterion, device, val_display=True, display_sample=True):
+def evaluate(
+    model: torch.nn.Module,
+    loader: torch.utils.data.DataLoader,
+    criterion: torch.nn.Module,
+    device: torch.device,
+    val_display: bool = True,
+    display_sample: bool = True
+) -> float:
     """
     Evaluate the model on the given DataLoader and optionally display a random sample.
 
@@ -24,6 +31,7 @@ def evaluate(model, loader, criterion, device, val_display=True, display_sample=
         device (torch.device): The device to run the model on.
         mean (list): Mean used for normalization.
         std (list): Std used for normalization.
+        val_display (bool): Whether to display the prediction.
         display_sample (bool): Whether to display a random sample.
 
     Returns:
@@ -60,7 +68,30 @@ def evaluate(model, loader, criterion, device, val_display=True, display_sample=
 
 
 
-def train_model(model, train_loader, val_loader, criterion, optimizer, num_epochs, device):
+def train_model(
+        model: torch.nn.Module,
+        train_loader: torch.utils.data.DataLoader,
+        val_loader: torch.utils.data.DataLoader,
+        criterion: torch.nn.Module,
+        optimizer: torch.optim.Optimizer,
+        num_epochs: int,
+        device: torch.device
+    ):
+    """
+    Train the model using the given data, loss function, and optimizer.
+
+    Args:
+        model (torch.nn.Module): The neural network model.
+        train_loader (torch.utils.data.DataLoader): DataLoader for training data.
+        val_loader (torch.utils.data.DataLoader): DataLoader for validation data.
+        criterion (torch.nn.Module): Loss function.
+        optimizer (torch.optim.Optimizer): Optimizer for training.
+        num_epochs (int): Number of epochs to train.
+        device (torch.device): Device to run the model on.
+
+    Returns:
+        list, list, torch.nn.Module: Training losses, validation losses, and the trained model.
+    """
     train_losses = []
     val_losses = []
     best_loss = float('inf')
@@ -193,6 +224,13 @@ def display_prediction(
 
 # Plotting function for losses
 def plot_losses(train_losses, val_losses):
+    """
+    Plot the training and validation losses.
+
+    Args:
+        train_losses (list): List of training losses.
+        val_losses (list): List of validation losses.
+    """
     plt.figure(figsize=(10, 5))
     plt.plot(train_losses, label="Training Loss")
     plt.plot(val_losses, label="Validation Loss")
@@ -205,6 +243,12 @@ def plot_losses(train_losses, val_losses):
 
 
 def model_pipeline(getDataLoader=True):
+    """
+    The main pipeline for training the model.
+
+    Args:
+        getDataLoader (bool): Whether to get the DataLoader.
+    """
     # Define the model parameters
     max_epochs = 10
     learning_rate = 0.001
