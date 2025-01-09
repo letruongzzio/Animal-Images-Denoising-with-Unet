@@ -75,8 +75,8 @@ Provides imports for easier access to all utility functions.
    ```
    DATA_DIRNAME/
    ├── train/
-   │   ├── images/ (original images)
-   │   └── labels/ (noisy images)
+   │   ├── images/ (noisy images)
+   │   └── labels/ (original images)
    ├── val/
    │   ├── images/
    │   └── labels/
